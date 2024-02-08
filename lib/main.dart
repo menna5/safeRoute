@@ -39,14 +39,6 @@ void _connect(op) async {
   }
   } 
 }
-int printable(i){
-  if(i == 1){
-    print('Hi');}
-  else {
-    print('Bye');
-  }
-  return 0;
-}
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -56,11 +48,10 @@ void main() async {
   );
   print('out');
   runApp(const MyApp());
+  //var counterStream = Stream<int>.periodic(const Duration(seconds: 1), (x) => x).take(150000);
+  //counterStream.forEach(printable);
   //_connect('ID');
-  await printable(1);
-  const oneSec = Duration(seconds:1);
   // Timer.periodic(oneSec, (Timer) {_connect('Data');});
-  Timer.periodic(oneSec, (Timer) async {await printable(2);});
 }
 
 class MyApp extends StatelessWidget {
